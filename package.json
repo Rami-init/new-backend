@@ -1,0 +1,43 @@
+{
+  "name": "starter-gaphql",
+  "description": "this is the graphql starter",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "Rami Sami",
+  "private": true,
+  "main": "./src/server.ts",
+  "scripts": {
+    "start": "tsc && node ./build/src/server.js",
+    "compile": "tsc",
+    "dev": "ts-node-dev --respawn ./src/index.ts",
+    "formate": "prettier . --write",
+    "prepare": "husky install",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "generate": "graphql-codegen"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.9.3",
+    "graphql": "^16.8.1",
+    "graphql-tag": "^2.12.6"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.0",
+    "@graphql-codegen/typescript": "^4.0.1",
+    "@graphql-codegen/typescript-resolvers": "^4.0.1",
+    "@typescript-eslint/eslint-plugin": "^6.7.2",
+    "@typescript-eslint/parser": "^6.7.2",
+    "eslint": "^8.49.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "husky": ">=6",
+    "lint-staged": ">=10",
+    "nodemon": "^3.0.1",
+    "prettier": "3.0.3",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.2.2"
+  },
+  "lint-staged": {
+    "*": "prettier --ignore-unknown --write",
+    "*.ts": "eslint ."
+  }
+}
